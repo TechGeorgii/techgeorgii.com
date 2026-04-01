@@ -4,7 +4,8 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "start": "astro preview --host 0.0.0.0 --port ${PORT:-4321} --allowed-hosts all"
   },
   "dependencies": {
     "astro": "^5.7.0"
