@@ -1,0 +1,24 @@
+---
+import BaseLayout from "./BaseLayout.astro";
+
+interface Props {
+  frontmatter: {
+    title: string;
+    description?: string;
+    pubDate?: string;
+  };
+}
+
+const { frontmatter } = Astro.props;
+---
+<BaseLayout title={frontmatter.title} description={frontmatter.description}>
+  <article>
+    <h1>{frontmatter.title}</h1>
+    {frontmatter.pubDate ? (
+      <p class="article-meta">
+        <time datetime={frontmatter.pubDate}>{frontmatter.pubDate}</time>
+      </p>
+    ) : null}
+    <slot />
+  </article>
+</BaseLayout>

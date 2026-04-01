@@ -1,0 +1,68 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const posts = [
+  {
+    "title": "ERC-2612 tutorial and adoption research",
+    "href": "/erc-2612-tutorial-and-adoption-research/",
+    "date": "2024-02-17"
+  },
+  {
+    "title": "Swapping ERC20 tokens – sweepToken Uniswap’s SwapRouter MEV opportunity",
+    "href": "/swapping-erc20-tokens-sweeptoken-uniswaps-swaprouter-mev-opportunity/",
+    "date": "2023-01-31"
+  },
+  {
+    "title": "Uniswap’s SwapRouter refund bug – how much MEV bots can earn",
+    "href": "/uniswaps-swaprouter-refund-bug-how-much-mev-bots-can-earn/",
+    "date": "2023-01-24"
+  },
+  {
+    "title": "Go (Golang) fix network issues: «read: connection reset by peer», «http: server closed idle connection», EOF",
+    "href": "/go-golang-fix-network-issues-connection-reset-by-peer-http-server-closed-idle-connection-eof/",
+    "date": "2022-12-05"
+  },
+  {
+    "title": "Uniswap V3 SDK Swap Tutorial 5/5 – Execute a swap",
+    "href": "/uniswap-v3-sdk-swap-tutorial-part-5-execute-a-swap/",
+    "date": "2022-07-29"
+  },
+  {
+    "title": "Uniswap V3 SDK Swap Tutorial 4/5 – Get swap route",
+    "href": "/uniswap-v3-sdk-swap-tutorial-part-4-get-swap-route/",
+    "date": "2022-07-29"
+  },
+  {
+    "title": "Uniswap V3 SDK Swap Tutorial 3/5 – Get quote",
+    "href": "/uniswap-v3-sdk-swap-tutorial-part-3-get-quotes-with-uniswap-quoter/",
+    "date": "2022-07-18"
+  },
+  {
+    "title": "Uniswap V3 SDK Swap Tutorial 2/5 – Get pool information",
+    "href": "/uniswap-v3-sdk-swap-tutorial-part-2-get-pool-information/",
+    "date": "2022-07-18"
+  },
+  {
+    "title": "Uniswap V3 SDK Swap Tutorial 1/5 – Load token balances",
+    "href": "/uniswap-v3-sdk-tutorial-part-1-load-token-balances/",
+    "date": "2022-07-13"
+  },
+  {
+    "title": "Uniswap V3 SDK Swap Tutorial",
+    "href": "/uniswap-v3-sdk-tutorial/",
+    "date": "2022-07-13"
+  }
+] as const;
+---
+<BaseLayout title="TechGeorgii" description="Ethereum, Solidity, Uniswap, ethers.js articles">
+  <h1>TechGeorgii</h1>
+  <p>Ethereum, Solidity, Uniswap, ethers.js — notes and tutorials.</p>
+  <ul class="post-index">
+    {posts.map((p) => (
+      <li>
+        <time datetime={p.date}>{p.date}</time>
+        <a href={p.href}>{p.title}</a>
+      </li>
+    ))}
+  </ul>
+</BaseLayout>
