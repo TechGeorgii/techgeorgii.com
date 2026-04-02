@@ -8,6 +8,13 @@ const { title, description = "TechGeorgii" } = Astro.props;
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <script is:inline>
+      (function () {
+        var s = localStorage.getItem("theme");
+        document.documentElement.dataset.theme =
+          s === "light" || s === "dark" ? s : "dark";
+      })();
+    </script>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
@@ -19,24 +26,57 @@ const { title, description = "TechGeorgii" } = Astro.props;
   <body>
     <header class="site-header">
       <a class="brand" href="/">TechGeorgii</a>
-      <nav>
-        <a href="/about-me/">About</a>
-      </nav>
+      <div class="site-header-right">
+        <nav>
+          <a href="/about-me/">About</a>
+        </nav>
+        <button
+          type="button"
+          class="theme-toggle"
+          id="theme-toggle"
+          aria-label="Toggle light or dark theme"
+        >
+          <span class="theme-icon theme-icon-sun" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32 1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+          </span>
+          <span class="theme-icon theme-icon-moon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          </span>
+        </button>
+      </div>
     </header>
     <main>
       <slot />
     </main>
+    <script is:inline>
+      document.getElementById("theme-toggle")?.addEventListener("click", function () {
+        var html = document.documentElement;
+        var next = html.dataset.theme === "dark" ? "light" : "dark";
+        html.dataset.theme = next;
+        localStorage.setItem("theme", next);
+      });
+    </script>
   </body>
 </html>
 
 <style is:global>
   :root {
+    color-scheme: dark;
     --bg: #0f1115;
     --text: #e8eaed;
     --muted: #9aa0a6;
     --link: #7cb3ff;
     --border: #2a2f38;
     --code-bg: #1a1d24;
+  }
+  html[data-theme="light"] {
+    color-scheme: light;
+    --bg: #f7f5f0;
+    --text: #1c1d21;
+    --muted: #5c5f66;
+    --link: #0b57d0;
+    --border: #dad6ce;
+    --code-bg: #ebe8e2;
   }
   * {
     box-sizing: border-box;
@@ -66,9 +106,41 @@ const { title, description = "TechGeorgii" } = Astro.props;
     color: var(--text);
     text-decoration: none;
   }
+  .site-header-right {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
   .site-header nav {
     display: flex;
     gap: 1.25rem;
+  }
+  .theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.25rem;
+    height: 2.25rem;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: var(--muted);
+    cursor: pointer;
+    border-radius: 6px;
+  }
+  .theme-toggle:hover {
+    color: var(--link);
+    background: var(--code-bg);
+  }
+  .theme-icon {
+    display: none;
+    line-height: 0;
+  }
+  html[data-theme="dark"] .theme-icon-sun {
+    display: block;
+  }
+  html[data-theme="light"] .theme-icon-moon {
+    display: block;
   }
   .site-header a {
     color: var(--muted);
