@@ -1,0 +1,16 @@
+name: Deploy to Railway
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    container: ghcr.io/railwayapp/cli:latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Deploy
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+        run: railway up --project 1d895c83-ce14-40cc-a60e-7f61303ed7e3 --environment production --service "techgeorgii.com" --ci -d
