@@ -198,5 +198,3 @@ Also, in case of development of your dApp, I would budget in additional time for
 ––––
 
 Follow me on X / Twitter [@TechGeorgii](https://x.com/techgeorgii)
-
-I am also a co-founder of a [software development company](https://aspirity.com), so in case you have a custom project in Ethereum or Web2 space, or looking for additional bandwidth, please reach out on [Telegram](https://t.me/georgiisavchenko) (preferred) or Twitter

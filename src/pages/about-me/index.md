@@ -1,19 +1,29 @@
 ---
 layout: ../../layouts/ArticleLayout.astro
 title: "Hey, I am Georgii"
-description: "Hello everyone! I am glad to welcome you on my blog. In this blog I’ll post materials related to Web3/Blockchain development and hope you’ll find them useful. In case you’re interested in my developer journey. I started "
+description: ""
 ---
 
-Hello everyone! I am glad to welcome you on my blog.
+Hello everyone!
 
-In this blog I’ll post materials related to Web3/Blockchain development and hope you’ll find them useful.
+I am a blockchain data and execution developer. [Github](https://github.com/techgeorgii) | [X](https://x.com/techgeorgii)
 
-In case you’re interested in my developer journey. I started in 2005 as a .NET developer and then participated in numerous web development projects in the field of logistics, HR, project management and access control.
 
-My biggest interest in university was ICPC computer programming olympiads where our team once took first place at quarterfinals. That’s where I learned C++ and lots of math, optimisations.
+Crypto projects I participated:
 
-In 2011 together with my partner we started a SaaS LangPrism, I was a CTO.
+__SQD, blockchain data and execution developer__
 
-In 2014 completely switched to CEO/management/sales roles at [Aspirity – front-end development agency](https://aspirity.com)
+Led creation of execution engine for SQDGN trading terminal. Implemented data ingestion pipes for DEX swap prices, liquidity, holders count.
 
-In 2022 switched back to technology and blockchain development (still being Aspirity’s co-founder) and I am happy about it.
+__Overnight.finance, blockchain developer__
+
+Yield rebase stablecoin backed by delta-neutral strategies ($20M TVL).
+Was responsible for and stabilized everyday payout process, improved transactions throughtput and gas usage. Led a USD+ stablecoin Sonic migration project, implemented Silo lending market stragegies.
+
+__Yoki.finance, CTO/co-founder__
+
+A Web3 recurring payments gateway. I assembled and led the development team, and co-built the MVP alongside team members. We secured our first $100K investment from the Blockchain Founders Group startup accelerator.
+
+__Web3 Wizard helper__
+
+While working with Dune Analytics I got an idea of extension to simplify querying and data hacking on Dune Analytics. It went viral on Twitter.
