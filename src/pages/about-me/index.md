@@ -18,11 +18,11 @@ Led creation of execution engine for SQDGN trading terminal. Implemented data in
 __Overnight.finance, blockchain developer__
 
 Yield rebase stablecoin backed by delta-neutral strategies ($20M TVL).
-Was responsible for and stabilized everyday payout process, improved transactions throughtput and gas usage. Led a USD+ stablecoin Sonic migration project, implemented Silo lending market stragegies.
+Was responsible for and stabilized everyday payout process, improved transactions throughput and gas usage. Led a USD+ stablecoin Sonic migration project, implemented Silo lending market strategies.
 
 __Yoki.finance, CTO/co-founder__
 
-A Web3 recurring payments gateway. I assembled and led the development team, and co-built the MVP alongside team members. We secured our first $100K investment from the Blockchain Founders Group startup accelerator.
+A Web3 recurring payments gateway. I assembled and led the development team, and co-built the MVP alongside team members. We secured our first $100K investment.
 
 __Web3 Wizard helper__
 
