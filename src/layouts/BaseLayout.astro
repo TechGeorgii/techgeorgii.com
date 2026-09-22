@@ -2,11 +2,13 @@
 interface Props {
   title: string;
   description?: string;
+  lang?: string;
+  minimal?: boolean;
 }
-const { title, description = "TechGeorgii" } = Astro.props;
+const { title, description = "TechGeorgii", lang = "en", minimal = false } = Astro.props;
 ---
 <!DOCTYPE html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <script is:inline>
       (function () {
@@ -24,12 +26,14 @@ const { title, description = "TechGeorgii" } = Astro.props;
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet" />
   </head>
   <body>
-    <header class="site-header">
-      <a class="brand" href="/">TechGeorgii</a>
+    <header class:list={["site-header", { "site-header-minimal": minimal }]}>
+      {!minimal && <a class="brand" href="/">TechGeorgii</a>}
       <div class="site-header-right">
-        <nav>
-          <a href="/about-me/">About</a>
-        </nav>
+        {!minimal && (
+          <nav>
+            <a href="/about-me/">About</a>
+          </nav>
+        )}
         <button
           type="button"
           class="theme-toggle"
@@ -100,6 +104,9 @@ const { title, description = "TechGeorgii" } = Astro.props;
     border-bottom: 1px solid var(--border);
     max-width: 48rem;
     margin: 0 auto;
+  }
+  .site-header-minimal {
+    justify-content: flex-end;
   }
   .brand {
     font-weight: 600;
